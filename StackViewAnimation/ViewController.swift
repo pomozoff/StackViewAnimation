@@ -10,16 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var stack: UIStackView!
+    @IBOutlet var buttons: [UIButton]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        buttons.forEach { $0.isHidden = true }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func action(_ sender: UIButton) {
+        UIView.animate(withDuration: 3.0,
+                       delay: 0.5,
+                       options: .curveEaseInOut,
+                       animations:
+            {
+                self.buttons.forEach { $0.isHidden = !$0.isHidden }
+                self.view.layoutIfNeeded()
+            }, completion: nil)
     }
-
 
 }
 
