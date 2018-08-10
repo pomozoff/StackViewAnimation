@@ -12,20 +12,23 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var stack: UIStackView!
     @IBOutlet var buttons: [UIButton]!
+    @IBOutlet var zeroHeightConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        buttons.forEach { $0.isHidden = true }
+//        buttons.forEach { $0.isHidden = true }
     }
 
     @IBAction func action(_ sender: UIButton) {
-        UIView.animate(withDuration: 3.0,
+        zeroHeightConstraint.isActive = !zeroHeightConstraint.isActive
+//        buttons.forEach { $0.isHidden = !$0.isHidden }
+
+        UIView.animate(withDuration: 1.0,
                        delay: 0.5,
                        options: .curveEaseInOut,
                        animations:
             {
-                self.buttons.forEach { $0.isHidden = !$0.isHidden }
                 self.view.layoutIfNeeded()
             }, completion: nil)
     }

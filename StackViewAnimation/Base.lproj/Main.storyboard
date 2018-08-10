@@ -20,21 +20,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NmF-wu-9Vq">
-                                <rect key="frame" x="0.0" y="483.5" width="375" height="183.5"/>
+                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guH-Th-0ER" userLabel="Button Left">
-                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="183.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="0.0"/>
                                         <color key="backgroundColor" red="1" green="0.61942324309999997" blue="0.13977410309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="guH-Th-0ER" secondAttribute="height" multiplier="1:1" id="C65-Uo-qf4"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUE-fR-HfK" userLabel="Button Right">
-                                        <rect key="frame" x="191.5" y="0.0" width="183.5" height="183.5"/>
+                                        <rect key="frame" x="191.5" y="0.0" width="183.5" height="0.0"/>
                                         <color key="backgroundColor" red="0.093024654969999995" green="0.92402583360000001" blue="0.057078378460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="XUE-fR-HfK" secondAttribute="height" multiplier="1:1" id="D1s-9Q-dYV"/>
+                                        </constraints>
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" id="LUy-Ms-c4E"/>
                                     <constraint firstItem="XUE-fR-HfK" firstAttribute="width" secondItem="guH-Th-0ER" secondAttribute="width" id="LZI-l8-9Jv"/>
                                 </constraints>
                             </stackView>
@@ -57,6 +61,7 @@
                     </view>
                     <connections>
                         <outlet property="stack" destination="NmF-wu-9Vq" id="Iko-nH-z7d"/>
+                        <outlet property="zeroHeightConstraint" destination="LUy-Ms-c4E" id="rbE-Fr-89E"/>
                         <outletCollection property="buttons" destination="guH-Th-0ER" collectionClass="NSMutableArray" id="Use-9d-iq9"/>
                         <outletCollection property="buttons" destination="XUE-fR-HfK" collectionClass="NSMutableArray" id="Z9F-Sw-y3F"/>
                     </connections>
