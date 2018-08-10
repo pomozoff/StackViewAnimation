@@ -27,11 +27,11 @@
                                     <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rJj-l8-pMF"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of9-cY-yPE">
-                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BWa-2Y-rkK">
+                                <rect key="frame" x="0.0" y="483.5" width="375" height="183.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guH-Th-0ER" userLabel="Button Left">
-                                        <rect key="frame" x="8" y="8" width="175.5" height="175.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="183.5"/>
                                         <color key="backgroundColor" red="1" green="0.61942324309999997" blue="0.13977410309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Left"/>
                                         <constraints>
@@ -39,7 +39,7 @@
                                         </constraints>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUE-fR-HfK" userLabel="Button Right">
-                                        <rect key="frame" x="191.5" y="8" width="175.5" height="175.5"/>
+                                        <rect key="frame" x="191.5" y="0.0" width="183.5" height="183.5"/>
                                         <color key="backgroundColor" red="0.093024654969999995" green="0.92402583360000001" blue="0.057078378460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Right"/>
                                         <constraints>
@@ -47,30 +47,19 @@
                                         </constraints>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration" identifier="Container"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="XUE-fR-HfK" secondAttribute="trailing" constant="8" id="4Wn-NX-7x8"/>
-                                    <constraint firstItem="XUE-fR-HfK" firstAttribute="leading" secondItem="guH-Th-0ER" secondAttribute="trailing" constant="8" id="KXk-uG-W4z"/>
-                                    <constraint firstItem="guH-Th-0ER" firstAttribute="top" secondItem="Of9-cY-yPE" secondAttribute="top" constant="8" id="Ygu-Gy-E7V"/>
-                                    <constraint firstItem="guH-Th-0ER" firstAttribute="leading" secondItem="Of9-cY-yPE" secondAttribute="leading" constant="8" id="a3E-di-5bc"/>
-                                    <constraint firstAttribute="height" id="bhn-iU-DME"/>
-                                    <constraint firstItem="XUE-fR-HfK" firstAttribute="top" secondItem="guH-Th-0ER" secondAttribute="top" id="oj4-rq-LIt"/>
-                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="guH-Th-0ER" secondAttribute="bottom" constant="8" id="rWU-Bp-9xM"/>
-                                    <constraint firstItem="XUE-fR-HfK" firstAttribute="bottom" secondItem="guH-Th-0ER" secondAttribute="bottom" id="sZh-un-zTy"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Of9-cY-yPE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5W1-cO-CGQ"/>
-                            <constraint firstItem="Of9-cY-yPE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CJo-qG-Myx"/>
-                            <constraint firstItem="Of9-cY-yPE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="paR-SH-NeU"/>
+                            <constraint firstAttribute="bottom" secondItem="BWa-2Y-rkK" secondAttribute="bottom" id="1Pz-jV-1gR"/>
+                            <constraint firstAttribute="trailing" secondItem="BWa-2Y-rkK" secondAttribute="trailing" id="6V9-v6-3WR"/>
+                            <constraint firstItem="BWa-2Y-rkK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xLb-t1-wD7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="zeroHeightConstraint" destination="bhn-iU-DME" id="HmY-Yu-m7x"/>
+                        <outlet property="bottomStackConstraint" destination="1Pz-jV-1gR" id="Ylg-7I-0MG"/>
+                        <outlet property="stack" destination="BWa-2Y-rkK" id="yg2-UH-IfA"/>
                         <outletCollection property="buttons" destination="guH-Th-0ER" collectionClass="NSMutableArray" id="Use-9d-iq9"/>
                         <outletCollection property="buttons" destination="XUE-fR-HfK" collectionClass="NSMutableArray" id="Z9F-Sw-y3F"/>
                     </connections>

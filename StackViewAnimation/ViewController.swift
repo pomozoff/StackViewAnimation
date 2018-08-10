@@ -11,10 +11,23 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var buttons: [UIButton]!
-    @IBOutlet var zeroHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stack: UIStackView!
+    @IBOutlet weak var bottomStackConstraint: NSLayoutConstraint!
+
+    var isShown = true {
+        didSet {
+            bottomStackConstraint.constant = isShown ? 0 : -stack.frame.height
+        }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        isShown = false
+    }
 
     @IBAction func action(_ sender: UIButton) {
-        zeroHeightConstraint.isActive = !zeroHeightConstraint.isActive
+        isShown = !isShown
 
         UIView.animate(withDuration: 1.0,
                        delay: 0.5,
